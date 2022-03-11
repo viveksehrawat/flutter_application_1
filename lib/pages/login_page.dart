@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/routes.dart';
+
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
 
@@ -9,7 +11,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   moveToHome(BuildContext context) async {
-    // await Navigator.pushNamed(context, MyRoutes.homeRoute);
+    await Navigator.pushNamed(context, MyRoutes.homeRoute);
   }
 
   @override
@@ -58,8 +60,11 @@ class _LoginPageState extends State<LoginPage> {
                     height: 40.0,
                   ),
                   
-                  InkWell(
-                    onTap: () => moveToHome(context),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                  minimumSize: Size(150, 50) // put the width and height you want
+                ),
+                    onPressed: () => moveToHome(context),
                     child: Text(
                       "Login",
                       style: TextStyle(
