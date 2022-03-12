@@ -1,6 +1,6 @@
 
 class CatalogModel {
-  late List<Item> items;
+  static List<Item> items = [];
 
   // Get Item by ID
   Item getById(int id) =>

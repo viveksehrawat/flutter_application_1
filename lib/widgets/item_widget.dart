@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/catalog.dart';
 
+import '../utils/routes.dart';
+
 class ItemWidget extends StatelessWidget {
   Item item = Item();
 
@@ -12,7 +14,8 @@ class ItemWidget extends StatelessWidget {
     return Card(
       child: ListTile(
         onTap: () {
-          print("${item.name} pressed");
+          Navigator.pushNamed(context, MyRoutes.cartRoute);
+          // print("${item.name} pressed");
         },
         leading: Image.network(item.image!),
         title: Text(item.name!),
